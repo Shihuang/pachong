@@ -18,7 +18,7 @@ print ma.group()
 ma = re.match(r'{[a-z]}','{e}')
 print ma.group()
 
-ma = re.match(r'{[a-zA-Z]}','{a}')
+ma = re.match(r'{[a-zA-Z]}','{A}')
 print ma.group()
 
 ma = re.match(r'{[a-zA-Z0-9]}','{6}')
@@ -48,14 +48,15 @@ print ma.group()
 ma = re.match(r'[A-Z][a-z]','AsD')
 print ma.group()
 
-ma = re.match(r'[A-Z][a-z]*','ASwD')
+ma = re.match(r'[A-Z][a-z]*','AswD')
 print ma.group()
 #变量命名规则
-#加+号和不加效果一样
-ma = re.match(r'a[_a-zA-Z]+[_\w]*','ASwDff2')
+#加+号和*效果一样
+#python命名规则正则表达式
+ma = re.match(r"a[_a-zA-Z]+[_\w]*", 'aSwDff2')
 print ma.group()
 
-ma = re.match(r'[1-9]?[0-9]','11')
+ma = re.match(r'[1-9]?[0-9]','09')
 print ma.group()
 
 ma = re.match(r'[a-zA-Z0-9]{5}','abcd1')
@@ -65,6 +66,9 @@ ma = re.match(r'[a-zA-Z0-9]{6,10}@163.com','cjy12345@163.com')
 print ma.group()
 #非贪婪模式，尽可能少匹配，这里指尽可能不匹配（匹配0次）
 ma = re.match(r'[0-9][a-z]*?','1bc')
+print ma.group()
+#??和*?功能一样，尽可能少匹配，即匹配0次
+ma = re.match(r'[0-9][a-z]??','1bc')
 print ma.group()
 
 ma = re.match(r'[0-9][a-z]+?','1bc')

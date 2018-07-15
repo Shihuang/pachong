@@ -1,6 +1,7 @@
 import re
+
 str1 = 'imooc python'
-#print str1.startswith('im')
+# print str1.startswith('im')
 
 pa = re.compile(r'imooc')
 ma = pa.match(str1)
